@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Digital Clock</title>
+    <link
+      href="https://fonts.cdnfonts.com/css/digital-7-mono"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        color: #ffffff;
+        background-color: #000000;
+        font-family: "digital-7", sans-serif;
+        text-align: center;
+      }
+
+      /* Styling hari */
+      div.days {
+        margin: 10px 0;
+      }
+      div.days .day {
+        display: inline-block;
+        font-size: 18px;
+        font-weight: bold;
+        text-transform: uppercase;
+        margin: 0 5px;
+      }
+      div.days .active {
+        color: #ffffff;
+      }
+      div.days .inactive {
+        color: #777777;
+      }
+
+      /* Clock Styling */
+      div.clock {
+        margin: 5px 0;
+      }
+      div.clock div {
+        display: inline-block;
+        position: relative;
+      }
+
+      /* Styling for numbers */
+      div.clock div p {
+        font-size: 100px;
+        position: relative;
+        z-index: 100;
+      }
+
+      /* Placeholder Styling */
+      div.clock .placeholder {
+        color: #131212;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 50;
+        font-size: 100px;
+      }
+
+      .am-pm {
+        font-family: sans-serif;
+        text-transform: uppercase;
+        width: 20px;
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+      }
+      div.am-pm div p {
+        font-size: 12px;
+        font-weight: bold;
+        width: 100%;
+      }
+      .am,
+      .pm {
+        color: #777777;
+      }
+      .am.active,
+      .pm.active {
+        color: #ffffff;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="days">
+      <div class="day monday">monday</div>
+      <div class="day tuesday">tuesday</div>
+      <div class="day wednesday">wednesday</div>
+      <div class="day thursday">thursday</div>
+      <div class="day friday">friday</div>
+      <div class="day saturday">saturday</div>
+      <div class="day sunday">sunday</div>
+    </div>
+
+    <div class="clock">
+      <div class="am-pm">
+        <!-- AM -->
+        <div>
+          <p class="am">am</p>
+        </div>
+        <!-- PM -->
+        <div>
+          <p class="pm">pm</p>
+        </div>
+      </div>
+
+      <!-- HOUR -->
+      <div class="numbers">
+        <p class="hours"></p>
+        <p class="placeholder">88</p>
+      </div>
+      <div class="colon">
+        <p>:</p>
+      </div>
+      <!-- MINUTE -->
+      <div class="numbers">
+        <p class="minutes"></p>
+        <p class="placeholder">88</p>
+      </div>
+      <div class="colon">
+        <p>:</p>
+      </div>
+      <!-- SECOND -->
+      <div class="numbers">
+        <p class="seconds"></p>
+        <p class="placeholder">88</p>
+      </div>
+
+      <!-- AM / PM -->
+    </div>
+
+    <script>
+      function updateClock() {
+        const now = new Date();
+        let hours = now.getHours();
+        let minutes = now.getMinutes();
+        let seconds = now.getSeconds();
+        let ampm = hours >= 12 ? "pm" : "am";
+
+        // Convert 24-hour format to 12-hour format
+        hours = hours % 12;
+        hours = hours ? hours : 12; // the hour '0' should be '12'
+        hours = hours < 10 ? "0" + hours : hours; // Add leading zero if hour is less than 10
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+
+        // Set the clock display
+        document.querySelector(".hours").textContent = hours;
+        document.querySelector(".minutes").textContent = minutes;
+        document.querySelector(".seconds").textContent = seconds;
+
+        // Set AM/PM
+        const amElement = document.querySelector(".am");
+        const pmElement = document.querySelector(".pm");
+        amElement.classList.remove("active");
+        pmElement.classList.remove("active");
+
+        if (ampm === "am") {
+          amElement.classList.add("active");
+        } else {
+          pmElement.classList.add("active");
+        }
+
+        // Set the active day
+        const days = [
+          "sunday",
+          "monday",
+          "tuesday",
+          "wednesday",
+          "thursday",
+          "friday",
+          "saturday",
+        ];
+        const dayIndex = now.getDay(); // Get the current day (0-6, where 0 is Sunday)
+
+        days.forEach((day, index) => {
+          const dayElement = document.querySelector(`.${day}`);
+          if (index === dayIndex) {
+            dayElement.classList.add("active");
+            dayElement.classList.remove("inactive");
+          } else {
+            dayElement.classList.add("inactive");
+            dayElement.classList.remove("active");
+          }
+        });
+      }
+
+      // Call updateClock every second
+      setInterval(updateClock, 1000);
+
+      // Initial call to set the clock immediately
+      updateClock();
+    </script>
+  </body>
+</html>

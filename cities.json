@@ -1,0 +1,135 @@
+[
+    {
+      "name": "Jakarta",
+      "island": "Jawa"
+    },
+    {
+      "name": "Surabaya",
+      "island": "Jawa"
+    },
+    {
+      "name": "Bandung",
+      "island": "Jawa"
+    },
+    {
+      "name": "Bekasi",
+      "island": "Jawa"
+    },
+    {
+      "name": "Semarang",
+      "island": "Jawa"
+    },
+    {
+      "name": "Tangerang",
+      "island": "Jawa"
+    },
+    {
+      "name": "Depok",
+      "island": "Jawa"
+    },
+    {
+      "name": "Yogyakarta",
+      "island": "Jawa"
+    },
+    {
+      "name": "Malang",
+      "island": "Jawa"
+    },
+    {
+      "name": "Medan",
+      "island": "Sumatera"
+    },
+    {
+      "name": "Padang",
+      "island": "Sumatera"
+    },
+    {
+      "name": "Pekanbaru",
+      "island": "Sumatera"
+    },
+    {
+      "name": "Palembang",
+      "island": "Sumatera"
+    },
+    {
+      "name": "Batam",
+      "island": "Sumatera"
+    },
+    {
+      "name": "Banda Aceh",
+      "island": "Sumatera"
+    },
+    {
+      "name": "Makassar",
+      "island": "Sulawesi"
+    },
+    {
+      "name": "Manado",
+      "island": "Sulawesi"
+    },
+    {
+      "name": "Palu",
+      "island": "Sulawesi"
+    },
+    {
+      "name": "Kendari",
+      "island": "Sulawesi"
+    },
+    {
+      "name": "Gorontalo",
+      "island": "Sulawesi"
+    },
+    {
+      "name": "Denpasar",
+      "island": "Bali"
+    },
+    {
+      "name": "Mataram",
+      "island": "Nusa Tenggara"
+    },
+    {
+      "name": "Kupang",
+      "island": "Nusa Tenggara"
+    },
+    {
+      "name": "Pontianak",
+      "island": "Kalimantan"
+    },
+    {
+      "name": "Balikpapan",
+      "island": "Kalimantan"
+    },
+    {
+      "name": "Banjarmasin",
+      "island": "Kalimantan"
+    },
+    {
+      "name": "Palangkaraya",
+      "island": "Kalimantan"
+    },
+    {
+      "name": "Samarinda",
+      "island": "Kalimantan"
+    },
+    {
+      "name": "Jayapura",
+      "island": "Papua"
+    },
+    {
+      "name": "Manokwari",
+      "island": "Papua"
+    },
+    {
+      "name": "Ambon",
+      "island": "Maluku"
+    },
+    {
+      "name": "Ternate",
+      "island": "Maluku"
+    },
+    {
+      "name": "Sorong",
+      "island": "Papua Barat"
+    }
+  ]
+  
