@@ -4,7 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>JWS Abdurrahman</title>
-    <link rel="shortcut icon" href="https://media.istockphoto.com/id/1126042167/id/vektor/tahajud-sujud-muslim-berdoa-pada-malam-hari-gaya-ikon-monoline-sederhana-untuk-perayaan.jpg?s=612x612&w=0&k=20&c=Q-gATsmIfv0zKW28Cbuk4BrgmeMss58v_p2vLjo5Myg=" type="image/x-icon">
+    <link
+      rel="shortcut icon"
+      href="https://media.istockphoto.com/id/1126042167/id/vektor/tahajud-sujud-muslim-berdoa-pada-malam-hari-gaya-ikon-monoline-sederhana-untuk-perayaan.jpg?s=612x612&w=0&k=20&c=Q-gATsmIfv0zKW28Cbuk4BrgmeMss58v_p2vLjo5Myg="
+      type="image/x-icon"
+    />
     <script src="https://cdn.tailwindcss.com"></script>
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
@@ -99,11 +103,11 @@
 
       <!-- Next Azan (menindih Prayer Times) -->
       <div
-        class="absolute inset-x-0 top-32 z-50 flex items-center justify-center text-white gap-4"
+        class="absolute inset-x-0 top-44 md:top-32 z-50 block md:flex items-center justify-center text-white gap-4"
       >
         <div
           id="next-azan"
-          class="text-center flex font-bold bg-gradient-to-br from-indigo-500 to-indigo-700 px-12 py-6 rounded-lg shadow-2xl"
+          class="text-center flex font-bold bg-gradient-to-br from-indigo-500 to-indigo-700 px-12 py-6 rounded-lg mb-4 md:mb-0 mx-2 md:mx-0 shadow-2xl"
         >
           <span id="next-azan-name" class="text-3xl me-8 mt-2"></span>
           <div
@@ -127,14 +131,14 @@
 
         <!-- Current Time (Hour, Min, Sec) and AM/PM Indicator in a row next to next-azan -->
         <div
-          class="text-center bg-gradient-to-bl from-indigo-500 to-indigo-700 px-12 py-7 rounded-lg shadow-2xl text-4xl"
+          class="text-center bg-gradient-to-bl from-indigo-500 to-indigo-700 px-12 py-7 rounded-lg shadow-2xl text-4xl mb-4 md:mb-0 mx-2 md:mx-0"
           id="clock-show"
         ></div>
       </div>
 
       <!-- Prayer Times -->
       <div
-        class="absolute inset-x-0 top-52 z-40 flex flex-wrap gap-8 justify-around items-center bg-white rounded-lg w-11/12 sm:w-9/12 md:w-1/2 lg:w-2/3 xl:w-1/2 px-8 pt-12 pb-6 shadow-md justify-self-center"
+        class="absolute inset-x-0 top-96 md:top-52 z-40 flex flex-wrap gap-8 justify-around items-center bg-white rounded-lg w-11/12 w-2/3 md:w-1/2 lg:w-2/3 xl:w-1/2 px-8 pt-12 pb-6 shadow-md justify-self-center"
       >
         <div class="flex flex-col items-center w-full sm:w-fit">
           <div class="text-2xl font-medium text-sky-600">Imsak</div>
@@ -178,7 +182,7 @@
       </div>
     </div>
 
-    <div class="container mx-auto mt-12 p-8">
+    <div class="container mx-auto mt-[920px] md:mt-12 p-8">
       <!-- Dropdown Kota -->
       <div class="mb-8">
         <label for="city" class="block text-lg font-semibold text-gray-800 mb-2"
