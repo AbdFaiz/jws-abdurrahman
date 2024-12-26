@@ -3,6 +3,29 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="JWS Abdurrahman adalah website yang menyediakan jadwal sholat harian secara akurat untuk berbagai kota di Indonesia."
+    />
+    <meta
+      name="keywords"
+      content="JWS, JWS Abdurrahman, Jadwal Sholat, Jadwal Sholat Harian, Jadwal Sholat Indonesia"
+    />
+    <meta name="author" content="Nama Anda" />
+    <meta
+      property="og:title"
+      content="JWS Abdurrahman - Jadwal Sholat Harian"
+    />
+    <meta
+      property="og:description"
+      content="Dapatkan jadwal sholat harian yang akurat untuk berbagai kota di Indonesia di JWS Abdurrahman."
+    />
+    <meta
+      property="og:image"
+      content="https://link-gambar-untuk-thumbnail.jpg"
+    />
+    <meta property="og:url" content="https://nama-website.vercel.app/" />
+    <meta name="robots" content="index, follow" />
     <title>JWS Abdurrahman</title>
     <link
       rel="shortcut icon"
@@ -226,7 +249,18 @@
       </div>
     </div>
 
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=GA_TRACKING_ID"
+    ></script>
     <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "GA_TRACKING_ID");
+
       let selectedCity = "Jakarta";
       let timerInterval;
 
@@ -429,6 +463,22 @@
 
       // Event listener saat DOM selesai dimuat
       document.addEventListener("DOMContentLoaded", loadCities);
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "JWS Abdurrahman",
+        "url": "https://nama-website.vercel.app/",
+        "description": "JWS Abdurrahman menyediakan jadwal sholat harian secara akurat untuk berbagai kota di Indonesia.",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://nama-website.vercel.app/search?q={search_term_string}",
+          "query-input": "required name=search_term_string"
+        },
+        "inLanguage": "id"
+      }
     </script>
   </body>
 </html>
