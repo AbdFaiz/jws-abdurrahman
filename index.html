@@ -418,16 +418,17 @@
           nextAzanTime = nextAzan;
         }
 
-        // Kirim pemberitahuan 10 menit sebelum azan
-        setNotification(nextAzanTime);
+        // Kirim pemberitahuan 10 menit dan 5 menit sebelum azan
+        setNotification(nextAzanTime, 10);
+        setNotification(nextAzanTime, 5);
 
         updateCountdown(nextAzan, nextAzanName);
       }
 
-      // Fungsi untuk mengirimkan pemberitahuan 10 menit sebelum azan
-      function setNotification(nextAzanTime) {
+      // Fungsi untuk mengirimkan pemberitahuan (dengan waktu yang dapat disesuaikan)
+      function setNotification(nextAzanTime, minutesBefore) {
         const notificationTime = new Date(
-          nextAzanTime.getTime() - 10 * 60 * 1000
+          nextAzanTime.getTime() - minutesBefore * 60 * 1000
         );
 
         const now = new Date();
@@ -436,9 +437,12 @@
         if (timeUntilNotification > 0) {
           setTimeout(() => {
             if (Notification.permission === "granted") {
-              new Notification(`10 menit menuju azan ${nextAzanTime}`, {
-                body: `Persiapkan diri Anda untuk azan ${nextAzanTime}`,
-              });
+              new Notification(
+                `${minutesBefore} menit menuju azan ${nextAzanTime}`,
+                {
+                  body: `Persiapkan diri Anda untuk azan ${nextAzanTime}`,
+                }
+              );
             }
           }, timeUntilNotification);
         }
