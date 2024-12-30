@@ -272,7 +272,6 @@
       let selectedCity = "Jakarta";
       let timerInterval;
 
-      // Fungsi untuk memuat daftar kota dari JSON
       async function loadCities() {
         try {
           const response = await fetch("cities.json");
@@ -286,7 +285,7 @@
             citySelect.appendChild(option);
           });
 
-          citySelect.value = selectedCity; // Atur kota default
+          citySelect.value = selectedCity;
           await fetchPrayerTimes();
           await fetchMonthlyPrayerTimes();
         } catch (error) {
@@ -294,7 +293,6 @@
         }
       }
 
-      // Fungsi untuk memperbarui kota saat pengguna memilih
       async function updateCity() {
         const citySelect = document.getElementById("city");
         selectedCity = citySelect.value;
@@ -302,7 +300,6 @@
         await fetchMonthlyPrayerTimes();
       }
 
-      // Fungsi untuk mengambil data waktu salat bulanan
       async function fetchMonthlyPrayerTimes() {
         try {
           const response = await fetch(
@@ -333,7 +330,6 @@
         }
       }
 
-      // Fungsi untuk mengambil waktu salat hari ini
       async function fetchPrayerTimes() {
         try {
           const response = await fetch(
@@ -343,7 +339,6 @@
           const timings = data.data.timings;
           const hijriDate = data.data.date.hijri;
 
-          // Tampilkan waktu salat
           document.getElementById("imsak-time").innerText = timings.Imsak;
           document.getElementById("fajr-time").innerText = timings.Fajr;
           document.getElementById("dhuhr-time").innerText = timings.Dhuhr;
@@ -352,7 +347,6 @@
           document.getElementById("isha-time").innerText = timings.Isha;
           document.getElementById("sunrise-time").innerText = timings.Sunrise;
 
-          // Tampilkan tanggal
           document.getElementById("dateNow").innerText = new Date()
             .toLocaleDateString("id-ID", {
               weekday: "long",
@@ -365,7 +359,6 @@
             "dateArabic"
           ).innerText = `${hijriDate.day} ${hijriDate.month.en} ${hijriDate.year}`;
 
-          // Perhitungan tambahan
           document.getElementById("dhuha-time").innerText = calculateDhuhaTime(
             timings.Sunrise
           );
@@ -375,7 +368,6 @@
         }
       }
 
-      // Fungsi untuk menghitung waktu duha
       function calculateDhuhaTime(sunriseTime) {
         const [hours, minutes] = sunriseTime.split(":").map(Number);
         const totalMinutes = hours * 60 + minutes + 20;
@@ -387,7 +379,6 @@
         ).padStart(2, "0")}`;
       }
 
-      // Fungsi untuk menghitung azan berikutnya
       function calculateNextAzan(timings) {
         const now = new Date();
         const prayerTimes = [
@@ -418,14 +409,12 @@
           nextAzanTime = nextAzan;
         }
 
-        // Kirim pemberitahuan 10 menit dan 5 menit sebelum azan
         setNotification(nextAzanTime, 10);
         setNotification(nextAzanTime, 5);
 
         updateCountdown(nextAzan, nextAzanName);
       }
 
-      // Fungsi untuk mengirimkan pemberitahuan (dengan waktu yang dapat disesuaikan)
       function setNotification(nextAzanTime, minutesBefore) {
         const notificationTime = new Date(
           nextAzanTime.getTime() - minutesBefore * 60 * 1000
@@ -448,7 +437,6 @@
         }
       }
 
-      // Fungsi untuk memperbarui hitungan mundur azan berikutnya
       function updateCountdown(nextAzan, nextAzanName) {
         const azanNameElement = document.getElementById("next-azan-name");
         const hoursElement = document.getElementById("hours");
@@ -486,7 +474,6 @@
         timerInterval = setInterval(updateTimer, 1000);
       }
 
-      // Tampilkan jam digital
       document.addEventListener("DOMContentLoaded", () => {
         setInterval(() => {
           const now = new Date();
