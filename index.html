@@ -254,6 +254,14 @@
       src="https://www.googletagmanager.com/gtag/js?id=GA_TRACKING_ID"
     ></script>
     <script>
+      if ("Notification" in window && navigator.serviceWorker) {
+        Notification.requestPermission().then(function (permission) {
+          if (permission === "granted") {
+            console.log("Notification permission granted.");
+          }
+        });
+      }
+
       window.dataLayer = window.dataLayer || [];
       function gtag() {
         dataLayer.push(arguments);
@@ -392,12 +400,14 @@
 
         let nextAzan = null;
         let nextAzanName = null;
+        let nextAzanTime = null;
 
         prayerTimes.forEach((prayer) => {
           const prayerDate = new Date(`${now.toDateString()} ${prayer.time}`);
           if (prayerDate > now && (!nextAzan || prayerDate < nextAzan)) {
             nextAzan = prayerDate;
             nextAzanName = prayer.name;
+            nextAzanTime = prayerDate;
           }
         });
 
@@ -405,9 +415,33 @@
           const subuhTime = new Date(`${now.toDateString()} ${timings.Fajr}`);
           nextAzan = new Date(subuhTime.getTime() + 24 * 60 * 60 * 1000);
           nextAzanName = "Subuh";
+          nextAzanTime = nextAzan;
         }
 
+        // Kirim pemberitahuan 10 menit sebelum azan
+        setNotification(nextAzanTime);
+
         updateCountdown(nextAzan, nextAzanName);
+      }
+
+      // Fungsi untuk mengirimkan pemberitahuan 10 menit sebelum azan
+      function setNotification(nextAzanTime) {
+        const notificationTime = new Date(
+          nextAzanTime.getTime() - 10 * 60 * 1000
+        );
+
+        const now = new Date();
+        const timeUntilNotification = notificationTime - now;
+
+        if (timeUntilNotification > 0) {
+          setTimeout(() => {
+            if (Notification.permission === "granted") {
+              new Notification(`10 menit menuju azan ${nextAzanTime}`, {
+                body: `Persiapkan diri Anda untuk azan ${nextAzanTime}`,
+              });
+            }
+          }, timeUntilNotification);
+        }
       }
 
       // Fungsi untuk memperbarui hitungan mundur azan berikutnya
@@ -460,6 +494,20 @@
           document.getElementById("clock-show").textContent = timeString;
         }, 1000);
       });
+
+      if ("serviceWorker" in navigator) {
+        navigator.serviceWorker
+          .register("/service-worker.js")
+          .then(function (registration) {
+            console.log(
+              "Service Worker registered with scope:",
+              registration.scope
+            );
+          })
+          .catch(function (error) {
+            console.log("Service Worker registration failed:", error);
+          });
+      }
 
       // Event listener saat DOM selesai dimuat
       document.addEventListener("DOMContentLoaded", loadCities);
