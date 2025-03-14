@@ -1,72 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="google-site-verification" content="3kRNlbFnQD176ZQcFmnV54lYY9PCYs8hBDv5HYBa78Y" />
-    <meta
-      name="description"
-      content="JWS Abdurrahman adalah website yang menyediakan jadwal sholat harian secara akurat untuk berbagai kota di Indonesia."
-    />
-    <meta
-      name="keywords"
-      content="JWS, JWS Abdurrahman, Jadwal Sholat, Jadwal Sholat Harian, Jadwal Sholat Indonesia"
-    />
+    <meta name="description" content="JWS Abdurrahman adalah website yang menyediakan jadwal sholat harian secara akurat untuk berbagai kota di Indonesia." />
+    <meta name="keywords" content="JWS, JWS Abdurrahman, Jadwal Sholat, Jadwal Sholat Harian, Jadwal Sholat Indonesia" />
     <meta name="author" content="Nama Anda" />
-    <meta
-      property="og:title"
-      content="JWS Abdurrahman - Jadwal Sholat Harian"
-    />
-    <meta
-      property="og:description"
-      content="Dapatkan jadwal sholat harian yang akurat untuk berbagai kota di Indonesia di JWS Abdurrahman."
-    />
-    <meta
-      property="og:image"
-      content="https://link-gambar-untuk-thumbnail.jpg"
-    />
+    <meta property="og:title" content="JWS Abdurrahman - Jadwal Sholat Harian" />
+    <meta property="og:description" content="Dapatkan jadwal sholat harian yang akurat untuk berbagai kota di Indonesia di JWS Abdurrahman." />
+    <meta property="og:image" content="https://link-gambar-untuk-thumbnail.jpg" />
     <meta property="og:url" content="https://nama-website.vercel.app/" />
     <meta name="robots" content="index, follow" />
     <title>JWS Abdurrahman</title>
-    <link
-      rel="shortcut icon"
-      href="https://media.istockphoto.com/id/1126042167/id/vektor/tahajud-sujud-muslim-berdoa-pada-malam-hari-gaya-ikon-monoline-sederhana-untuk-perayaan.jpg?s=612x612&w=0&k=20&c=Q-gATsmIfv0zKW28Cbuk4BrgmeMss58v_p2vLjo5Myg="
-      type="image/x-icon"
+    <link rel="shortcut icon" href="https://media.istockphoto.com/id/1126042167/id/vektor/tahajud-sujud-muslim-berdoa-pada-malam-hari-gaya-ikon-monoline-sederhana-untuk-perayaan.jpg?s=612x612&w=0&k=20&c=Q-gATsmIfv0zKW28Cbuk4BrgmeMss58v_p2vLjo5Myg=" type="image/x-icon"
     />
     <script src="https://cdn.tailwindcss.com"></script>
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.cdnfonts.com/css/digital-7-mono"
-      rel="stylesheet"
-    />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.cdnfonts.com/css/digital-7-mono" rel="stylesheet" />
     <style>
-      @import url(http://fonts.googleapis.com/earlyaccess/droidarabickufi.css);
-
-      #ampm {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 20px;
-        color: #fff;
-      }
+        @import url(http://fonts.googleapis.com/earlyaccess/droidarabickufi.css);
+        #ampm {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+            color: #fff;
+        }
     </style>
-  </head>
+</head>
 
-  <body class="bg-gray-100 text-center">
-    <nav
-      class="border-gray-200 bg-black/50 sticky top-0 shadow-lg backdrop-blur-sm z-[99]"
-    >
-      <div
-        class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4"
-      >
-        <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
-          <i class="fas fa-mosque text-indigo-600"></i>
-          <span
-            class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white"
-            >JWS Abdurrahman</span
+<body class="bg-gray-100 text-center">
+    <nav class="border-gray-200 bg-black/50 sticky top-0 shadow-lg backdrop-blur-sm z-[99]">
+        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+            <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
+                <i class="fas fa-mosque text-indigo-600"></i>
+                <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">JWS Abdurrahman</span
           >
         </a>
         <button
@@ -77,13 +47,7 @@
           aria-expanded="false"
         >
           <span class="sr-only">Open main menu</span>
-          <svg
-            class="w-5 h-5"
-            aria-hidden="true"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewbox="0 0 17 14"
-          >
+                <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 17 14">
             <path
               stroke="currentColor"
               stroke-linecap="round"
@@ -92,17 +56,11 @@
               d="M1 1h15M1 7h15M1 13h15"
             />
           </svg>
-        </button>
-        <div class="hidden w-full md:block md:w-auto" id="navbar-solid-bg">
-          <ul
-            class="flex flex-col font-medium mt-4 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-transparent dark:bg-gray-800 md:dark:bg-transparent dark:border-gray-700"
-          >
-            <li>
-              <a
-                href="#"
-                class="block py-2 px-3 md:p-0 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:dark:text-blue-500 dark:bg-blue-600 md:dark:bg-transparent"
-                aria-current="page"
-                >Home</a
+                </button>
+                <div class="hidden w-full md:block md:w-auto" id="navbar-solid-bg">
+                    <ul class="flex flex-col font-medium mt-4 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-transparent dark:bg-gray-800 md:dark:bg-transparent dark:border-gray-700">
+                        <li>
+                            <a href="#" class="block py-2 px-3 md:p-0 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:dark:text-blue-500 dark:bg-blue-600 md:dark:bg-transparent" aria-current="page">Home</a
               >
             </li>
           </ul>
